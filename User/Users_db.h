@@ -16,5 +16,7 @@ public:
 	void add(const User& user);
 
 	bool save(const std::string& path) const;
+
+	~Users_db();
 };
 
