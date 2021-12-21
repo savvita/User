@@ -4,9 +4,15 @@
 int main()
 {
     Users_db users;
-    users.load("C:\\Users\\student\\Desktop\\users.txt");
-    std::cout << *users[0];
-    std::cout << *users[1];
-    users.remove(1);
-    std::cout << *users[0];
+    users.load("D:\\users.txt");
+    std::cout << users;
+    
+    std::cout << "======================\n";
+	User user = *users.getByID(3);
+    users.remove(user);
+    std::cout << users;
+    
+    std::cout << "======================\n";
+    users.remove(5);
+    std::cout << users;
 }

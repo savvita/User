@@ -22,5 +22,6 @@ public:
 
 	User* operator[](int index);
 
+	friend std::ostream& operator<<(std::ostream& out, Users_db& users);
 };
 

@@ -5,18 +5,31 @@ int main()
 {
 	Users_db users;
 
-	User user;
-	user.setFatherName("Father");
-	user.setName("name");
-	user.setAge(20);
+	char* tmp = new char[2];
 
-	users.add(user);
+	for (int i = 0; i < 10; i++)
+	{
+		User user;
+		_itoa_s(i, tmp, 2, 10);
+		std::string name = "FatherName";
+		name.append(tmp);
+		user.setFatherName(name);
 
-	user.setFatherName("Father2");
-	user.setName("name2");
-	user.setAge(30);
+		name = "Name";
+		name.append(tmp);
+		user.setName(name);
+		user.setAge(20 + i);
 
-	users.add(user);
+		users.add(user);		
+	}
+	delete[] tmp;
 
-	users.save("C:\\Users\\student\\Desktop\\users.txt");
+	if (users.save("D:\\users.txt"))
+	{
+		std::cout << "Saved...";
+	}
+	else
+	{
+		std::cout << "error openning a file\n";
+	}
 }

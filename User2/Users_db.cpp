@@ -7,6 +7,7 @@ bool Users_db::load(const std::string& path)
 	if (pf)
 	{
 		fscanf_s(pf, "%i", &this->count);
+
 		if (this->users)
 		{
 			delete[] this->users;
@@ -14,33 +15,33 @@ bool Users_db::load(const std::string& path)
 
 		this->users = new User * [this->count];
 
-		for (int i = 0; i < count; i++)
+		for (int i = 0; i < this->count; i++)
 		{
 			if (feof(pf))
 			{
-				fclose(pf);
 				return false;
 			}
+
+			int id;
+			fscanf_s(pf, "%i\n", &id);
 
 			std::string fname;
 			char ch;
 
-			while ((ch = fgetc(pf)) != EOF && ch!= ' ')
+			while ((ch = fgetc(pf)) != EOF && ch != '\n')
 			{
 				fname += ch;
-
 			}
 
 			std::string name;
-			while ((ch = fgetc(pf)) != EOF && ch!= ' ')
+			while ((ch = fgetc(pf)) != EOF && ch != '\n')
 			{
 				name += ch;
 			}
 
 			int age;
-			int id;
-			
-			fscanf_s(pf, "%i %i\n", &age, &id);
+			fscanf_s(pf, "%i", &age);
+
 			this->users[i] = new User(fname, name, age, id);
 		}
 
@@ -109,4 +110,13 @@ User* Users_db::operator[](int index)
 		return this->users[index];
 	}
 	return nullptr;
+}
+
+std::ostream& operator<<(std::ostream& out, Users_db& users)
+{
+	for (int i = 0; i < users.count; i++)
+	{
+		out << *users[i];
+	}
+	return out;
 }
