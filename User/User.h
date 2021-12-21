@@ -2,13 +2,14 @@
 class User
 {
 private:
-	int age;
+	long id;
 	std::string fname;
 	std::string name;
+	int age;
 
 public:
 	User();
-	User(std::string fname,std::string name, int age);
+	User(std::string fname,std::string name, int age, long id);
 
 	//gets
 	inline const std::string getFatherName() const
@@ -21,14 +22,22 @@ public:
 		return this->name;
 	}
 
-	inline const int getAge() const
+	inline int getAge() const
 	{
 		return this->age;
+	}
+
+	inline long getID() const
+	{
+		return this->id;
 	}
 
 	//sets
 	void setFatherName(std::string fname);
 	void setName(std::string name);
 	void setAge(int age);
+
+	//operator <<
+	friend std::ostream& operator<<(std::ostream& out, const User& user);
 };
 
