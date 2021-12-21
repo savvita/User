@@ -4,8 +4,12 @@ User::User() :User("", "", 0, 0)
 {
 }
 
-User::User(const User& user) : User(user.getFatherName(), user.getName(), user.getAge(), user.getID())
+User::User(const User& user)
 {
+	this->fname = user.getFatherName();
+	this->name = user.getName();
+	this->age = user.getAge();
+	this->id = user.getID();
 }
 
 User::User(std::string fname, std::string name, int age, long id)

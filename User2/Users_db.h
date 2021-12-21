@@ -7,6 +7,11 @@ private:
 	User** users;
 	int count;
 public:
+	Users_db()
+	{
+		this->users = nullptr;
+		this->count = 0;
+	}
 	bool load(const std::string& path);
 
 	void remove(int id);
@@ -16,5 +21,6 @@ public:
 	User* getByID(int id);
 
 	User* operator[](int index);
+
 };
 

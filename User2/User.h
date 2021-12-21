@@ -12,7 +12,7 @@ private:
 public:
 	User();
 	User(const User& user);
-	User(std::string fname,std::string name, int age, long id);
+	User(std::string fname, std::string name, int age, long id);
 
 	//gets
 	inline const std::string getFatherName() const
