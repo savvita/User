@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4013fd0d-281c-4760-8f9a-1ea3f18e679b}</ProjectGuid>
-    <RootNamespace>User</RootNamespace>
+    <ProjectGuid>{1799362d-7a17-4755-ab85-82070322d446}</ProjectGuid>
+    <RootNamespace>User2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,13 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="User.cpp" />
-    <ClCompile Include="Users_db.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="User.h" />
-    <ClInclude Include="Users_db.h" />
+    <ClCompile Include="User2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

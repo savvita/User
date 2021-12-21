@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+#include<iostream>
 class User
 {
 private:
@@ -9,6 +11,7 @@ private:
 
 public:
 	User();
+	User(const User& user);
 	User(std::string fname,std::string name, int age, long id);
 
 	//gets

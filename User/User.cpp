@@ -1,8 +1,10 @@
-﻿#include <string>
-#include<iostream>
-#include "User.h"
+﻿#include "User.h"
 
 User::User() :User("", "", 0, 0)
+{
+}
+
+User::User(const User& user) : User(user.getFatherName(), user.getName(), user.getAge(), user.getID())
 {
 }
 
